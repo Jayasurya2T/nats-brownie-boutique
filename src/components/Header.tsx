@@ -13,12 +13,19 @@ const Header = ({ onCartOpen }: HeaderProps) => {
   return (
     <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
       <div className="container flex items-center justify-between py-4">
-        <Link to="/" className="flex items-center gap-2">
+        {/* Logo and Brand Name Section */}
+        <Link to="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
+          <img 
+            src="/Nats_Brownies.png" 
+            alt="Nats Brownies Logo" 
+            className="h-10 w-10 md:h-12 md:w-12 object-contain" 
+          />
           <span className="text-2xl md:text-3xl font-display font-bold text-primary">
             Nats Brownies
           </span>
         </Link>
 
+        {/* Navigation Section */}
         <nav className="flex items-center gap-6">
           <Link
             to="/"
@@ -42,6 +49,8 @@ const Header = ({ onCartOpen }: HeaderProps) => {
           >
             Admin
           </Link>
+          
+          {/* Cart Button */}
           <button
             onClick={onCartOpen}
             className="relative p-2 rounded-full bg-primary text-primary-foreground hover:bg-chocolate-light transition-colors"
